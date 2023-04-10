@@ -14,7 +14,8 @@ import Science from "./pages/Science";
 import Sports from "./pages/Sports";
 import Technology from "./pages/Technology";
 import Sidebar from "./components/SideBar";
-
+import Register from "./components/auth/Register";
+import { Toaster } from "react-hot-toast";
 
 
 function App() {
@@ -23,11 +24,22 @@ function App() {
       <Sidebar />
       <div className="md:flex-grow">
         <Routes>
+          <Route path="/register" element={<Register />} />
           <Route path="/" element={<Home />} />
           <Route path="/business" element={<Business />} />
           <Route path="/entertainment" element={<Entertainment />} />
+          <Route path="/health" element={<Health />} />
+          <Route path="/science" element={<Science />} />
+          <Route path="/sports" element={<Sports />} />
+          <Route path="/technology" element={<Technology />} />
         </Routes>
       </div>
+      <Toaster 
+      position="top-right"
+      toastOptions={{
+        duration: 2000,
+      }}
+/>   
     </div>
   );
 }
