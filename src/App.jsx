@@ -1,6 +1,9 @@
 import { useState } from "react";
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import {
+  Routes, Route,
+  BrowserRouter, Link, Router
+} from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import sideBarData from "./sideBarData";
 import Business from "./pages/Business";
@@ -10,40 +13,22 @@ import Health from "./pages/Health";
 import Science from "./pages/Science";
 import Sports from "./pages/Sports";
 import Technology from "./pages/Technology";
+import Sidebar from "./components/SideBar";
+
+
 
 function App() {
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/business" element={<Business />} />
-        <Route path="/entertainment" element={<Entertainment />} />
-        <Route path="/health" element={<Health />} />
-        <Route path="/science" element={<Science />} />
-        <Route path="/sports" element={<Sports />} />
-        <Route path="/technology" element={<Technology />} />
-      </Routes>
-      <aside
-        id="default-sidebar"
-        className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
-      >
-        <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
-          <ul className="space-y-2 font-medium">
-            {sideBarData.map((item, index) => {
-              return (
-                <li className="mt-16">
-                  <NavLink to={item.path}>
-                    <span className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 uppercase font-open">
-                      {item.title}
-                    </span>
-                  </NavLink>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </aside>
-    </>
+    <div className="relative min-h-screen md:flex">
+      <Sidebar />
+      <div className="md:flex-grow">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/business" element={<Business />} />
+          <Route path="/entertainment" element={<Entertainment />} />
+        </Routes>
+      </div>
+    </div>
   );
 }
 
