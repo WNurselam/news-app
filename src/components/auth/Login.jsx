@@ -2,16 +2,26 @@ import React from 'react'
 import { login } from '../../firebase'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { login as loginHandle } from '../../store/reducers/Auth'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const user = await login(email, password);
+        dispatch(loginHandle(user))
+        navigate('/',{
+            replace:true
+        })
+    
 
-        //console.log(user);
+        console.log(user);
     }
     return (
         <div className='flex justify-center items-center mt-24'>          

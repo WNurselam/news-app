@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { IoMenu,IoAlertSharp} from "react-icons/io5";
 import { useState } from "react";
+
 
 export default function Sidebar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -9,6 +9,7 @@ export default function Sidebar() {
   const handleSidebarOpen = () => {
     setSidebarOpen(!sidebarOpen);
   };
+
   return (
     <div className="flex bg-gray-50 h-full fixed">
       <div className="flex flex-col h-screen p-3 bg-white shadow w-60">
