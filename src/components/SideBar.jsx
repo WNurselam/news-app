@@ -14,7 +14,7 @@ export default function Sidebar() {
       <div className="flex flex-col h-screen p-3 bg-white shadow w-60">
         <div className="space-y-3">
         <div className="flex items-center justify-between">
-            <h2 className="text-xl font-bold">N E W S</h2>
+            <h2 className="text-xl font-bold">NEWS  BUNDLE</h2>
             <div className="flex md:hidden">
               <button
                 type="button"

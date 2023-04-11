@@ -15,6 +15,7 @@ import Sports from "./pages/Sports";
 import Technology from "./pages/Technology";
 import Sidebar from "./components/SideBar";
 import Register from "./components/auth/Register";
+import Login from "./components/auth/Login";
 import { Toaster } from "react-hot-toast";
 
 
@@ -25,6 +26,7 @@ function App() {
       <div className="md:flex-grow">
         <Routes>
           <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home />} />
           <Route path="/business" element={<Business />} />
           <Route path="/entertainment" element={<Entertainment />} />
