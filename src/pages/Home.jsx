@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useQuery } from "react-query";
 import { fetchApi } from "../api/fetchApi";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+
+
 
 
 const Home = () => {
@@ -11,16 +12,6 @@ const Home = () => {
     fetchApi(category)
   );
 
-// const {user} = useSelector(state => state.auth)
-// //console.log(user);
-
-// if(user){
-//   return (
-//     <div>
-//       Hoşgeldin
-//     </div>
-//   )
-// }
 
   //console.log(data?.articles)
   return (

@@ -2,7 +2,7 @@ import React from 'react'
 import { login } from '../../firebase'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { login as loginHandle } from '../../store/reducers/Auth'
+import { login as loginHandle } from '../../store/auth'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
