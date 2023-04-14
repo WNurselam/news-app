@@ -1,8 +1,6 @@
 import { initializeApp } from "firebase/app";
-import {getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut} from 'firebase/auth'
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth'
 import { toast } from "react-hot-toast";
-
-
 
 const firebaseConfig = {
     apiKey: "AIzaSyBYJ6q8xVJay-jAEuinKA-xalwPzWPsKEc",
@@ -16,24 +14,22 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 
-export const register = async (email,password) => {
+export const register = async (email, password) => {
     try {
-        const {user} = await createUserWithEmailAndPassword(auth,email,password)
+        const { user } = await createUserWithEmailAndPassword(auth, email, password)
         return user;
     } catch (error) {
-        toast.error(error.message);
+        console.error(error.message);
     }
-   
 }
 
-export const login = async (email,password) => {
+export const login = async (email, password) => {
     try {
-        const {user} = await signInWithEmailAndPassword(auth,email,password);
+        const { user } = await signInWithEmailAndPassword(auth, email, password);
         return user;
     } catch (error) {
-        toast.error(error.message);    
+        console.log(error.message)
     }
-
 }
 
 export const logout = async () => {
@@ -41,7 +37,7 @@ export const logout = async () => {
         await signOut()
         return true
     } catch (error) {
-        toast.error(error.message);    
+        console.log(error.message);
     }
 }
 

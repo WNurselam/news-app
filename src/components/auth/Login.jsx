@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom'
 import { login as loginHandle } from '../../store/auth'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { toast } from "react-hot-toast";
+
 
 const Login = () => {
     const dispatch = useDispatch();
@@ -15,13 +17,16 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const user = await login(email, password);
-        dispatch(loginHandle(user))
-        navigate('/',{
-            replace:true
-        })
-    
-
-        console.log(user);
+        if(user){
+            dispatch(loginHandle(user))
+            navigate('/',{
+                replace:true
+            })
+            toast.success('Login Successful');
+        }else{
+            toast.error("Please check your email and password!");
+        }
+        //console.log(user);
     }
     return (
         <div className='flex justify-center items-center mt-24'>          

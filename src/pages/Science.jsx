@@ -9,7 +9,7 @@ const Science = () => {
     fetchApi(category)
   );
   return (
-    <div className="container m-5 mt-12 bg-gray-50 flex ml-52">
+    <div className="container m-5 mt-0 bg-gray-50 flex ml-52">
       <div className="grid grid-cols-1 gap-6 mb-6 lg:grid-cols-3 p-14 bg-slate-100 ">
         {
           data?.articles.map((item, index) => {

@@ -2,15 +2,29 @@ import React from 'react'
 import { useState } from 'react'
 import { register } from '../../firebase'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { toast } from "react-hot-toast";
 
 const Register = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-
+    
+    const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
         const user = await register(email, password);
-    
+        if(user){
+            navigate('/login',{
+                replace:true
+            })
+            toast.success('Registration Successful');
+        }else{
+            toast.error("Invalid email and password !");
+            setEmail("")
+            setPassword("")
+            e.target.reset();
+        }
+      
         //console.log(user);
     }
     return (

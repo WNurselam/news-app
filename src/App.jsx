@@ -37,7 +37,6 @@ function App() {
         </Routes>
       </div>
       <Toaster 
-      position="top-right"
       toastOptions={{
         duration: 2000,
       }}
