@@ -1,4 +1,4 @@
-# news-app
+# News App
 
 - React
 - React Query
