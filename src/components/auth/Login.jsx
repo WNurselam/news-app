@@ -1,5 +1,5 @@
 import React from 'react'
-import { login } from '../../firebase'
+import { login } from '../../firebase/firebase'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { login as loginHandle } from '../../store/auth'

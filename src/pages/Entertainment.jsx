@@ -19,18 +19,18 @@ const Entertainment = () => {
     <div className="container m-5 mt-0 bg-gray-50 flex ml-52">
       <div className="grid grid-cols-1 w-11/12 gap-6 mb-6 lg:grid-cols-3 p-14 bg-slate-100 ">
         {
-          data?.articles.map((item, index) => {
+          data?.map((item) => {
             return (
-              <div key={index} className="bg-white shadow-md rounded-md overflow-hidden ">
+              <div key={item._id} className="bg-white shadow-md rounded-md overflow-hidden ">
                 <Link to={item.url}>
                   <img
                     className="h-48 w-full object-cover p-5 rounded-md"
-                    src={item.urlToImage}
+                    src={item.media}
                     alt="Mountain landscape"
                   />
                   <span className="flex justify-end mr-4 text-slate-500">
                       {
-                       formatDate(item.publishedAt)
+                       formatDate(item.published_date)
                       }</span>
                 </Link>
                 <div className="p-4">

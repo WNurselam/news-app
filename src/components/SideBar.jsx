@@ -13,7 +13,7 @@ export default function Sidebar() {
 
 
   return (
-    <div className="flex bg-gray-50 h-full fixed">
+    <div className="flex bg-gray-50 min-h-full fixed">
       <div className="flex flex-col h-screen p-3 bg-white shadow w-60">
         <div className="space-y-3">
           <div className="flex items-center justify-between">

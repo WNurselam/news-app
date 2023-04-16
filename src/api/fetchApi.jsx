@@ -1,8 +1,15 @@
 import axios from "axios";
 
+
 export const fetchApi = async (category) => {
   const { data } = await axios.get(
-    `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=db51d6e6408d4898864c708c73793cc7`
+    `https://api.newscatcherapi.com/v2/search?q=${category}&lang=en&sort_by=relevancy&page=1&page_size=30`,
+    {
+      headers: {
+        "x-api-key": "s8qh2aw9G9IsI_sKlD6LJ66pJHRPimA9QiTHgv1Xy0w",
+      },
+    }
   );
-  return data;
+  return data.articles;
+
 };

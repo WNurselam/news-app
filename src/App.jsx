@@ -1,11 +1,5 @@
-import { useState } from "react";
 import "./App.css";
-import {
-  Routes, Route,
-  BrowserRouter, Link, Router
-} from "react-router-dom";
-import { NavLink } from "react-router-dom";
-import sideBarData from "./sideBarData";
+import { Routes, Route} from "react-router-dom";
 import Business from "./pages/Business";
 import Entertainment from "./pages/Entertainment";
 import Home from "./pages/Home";
@@ -17,6 +11,7 @@ import Sidebar from "./components/SideBar";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import { Toaster } from "react-hot-toast";
+import NotFound from "./pages/NotFound";
 
 
 function App() {
@@ -34,13 +29,14 @@ function App() {
           <Route path="/science" element={<Science />} />
           <Route path="/sports" element={<Sports />} />
           <Route path="/technology" element={<Technology />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
-      <Toaster 
-      toastOptions={{
-        duration: 2000,
-      }}
-/>   
+      <Toaster
+        toastOptions={{
+          duration: 2000,
+        }}
+      />
     </div>
   );
 }

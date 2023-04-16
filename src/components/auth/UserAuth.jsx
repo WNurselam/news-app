@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { logout } from '../../firebase';
+import { logout } from '../../firebase/firebase';
 import { logout as logoutHandle } from '../../store/auth';
 
 const UserAuth = () => {
